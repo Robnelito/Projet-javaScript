@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Système Linéaire</title>
+		<link rel="icon" type="png" href="../icone/logo.png">
+		<link rel="stylesheet" type="text/css" media="screen" href="../css/calcul.css">
+		<script type="text/javascript" src="../js/calcul.js"></script>
+		<style>
+			body{
+				background-image: url(../image/fond.jpg);
+				background-size: 100%;
+				background-attachment: fixed;
+				background-repeat: no-repeat;
+				}
+		</style>
+	</head>
+	<body>
+		<div id="MyClockDisplay" class="clock"></div><br>
+		<h1>Résoudre un Système Linéaire.</h1>
+		<ul>
+			<a href="../index.html"><button class="button"><span>Accueil</span></button></a><br><br>
+			<a href="degre.html"><button class="button"><span>2<sup>nd</sup>degré</span></button></a><br><br>
+			<a href="pub.html"><button class="button"><span>Publicité</span></button></a><br><br>
+		</ul>
+		<form name="fn">
+			<!--<div class="alert alert-danger hide txt-center" id="msgErreur">Champ de calcul vide</div>-->
+			<input type="text" id="chiffre" name="a1" size="3" onkeyPress="return validerNombre();"> X<sub>1</sub>+ 
+			<input type="text" id="chiffre" name="b1" size="3" onkeyPress="return validerNombre();"> X<sub>2</sub>+ 
+			<input type="text" id="chiffre" name="c1" size="3" onkeyPress="return validerNombre();"> X<sub>3</sub>+ 
+			<input type="text" id="chiffre" name="d1" size="3" onkeyPress="return validerNombre();"> X<sub>4</sub>= 
+			<input type="text" id="chiffre" name="w" size="3" onkeyPress="return validerNombre();"><br><br>
+
+			<input type="text" id="chiffre" name="a2" size="3" onkeyPress="return validerNombre();"> X<sub>1</sub>+ 
+			<input type="text" id="chiffre" name="b2" size="3" onkeyPress="return validerNombre();"> X<sub>2</sub>+ 
+			<input type="text" id="chiffre" name="c2" size="3" onkeyPress="return validerNombre();"> X<sub>3</sub>+ 
+			<input type="text" id="chiffre" name="d2" size="3" onkeyPress="return validerNombre();"> X<sub>4</sub>= 
+			<input type="text" id="chiffre" name="x" size="3" onkeyPress="return validerNombre();"><br><br>
+
+			<input type="text" id="chiffre" name="a3" size="3" onkeyPress="return validerNombre();"> X<sub>1</sub>+ 
+			<input type="text" id="chiffre" name="b3" size="3" onkeyPress="return validerNombre();"> X<sub>2</sub>+ 
+			<input type="text" id="chiffre" name="c3" size="3" onkeyPress="return validerNombre();"> X<sub>3</sub>+ 
+			<input type="text" id="chiffre" name="d3" size="3" onkeyPress="return validerNombre();"> X<sub>4</sub>= 
+			<input type="text" id="chiffre" name="y" size="3" onkeyPress="return validerNombre();"><br><br>
+
+			<input type="text" id="chiffre" name="a4" size="3" onkeyPress="return validerNombre();"> X<sub>1</sub>+ 
+			<input type="text" id="chiffre" name="b4" size="3" onkeyPress="return validerNombre();"> X<sub>2</sub>+ 
+			<input type="text" id="chiffre" name="c4" size="3" onkeyPress="return validerNombre();"> X<sub>3</sub>+ 
+			<input type="text" id="chiffre" name="d4" size="3" onkeyPress="return validerNombre();"> X<sub>4</sub>= 
+			<input type="text" id="chiffre" name="z" size="3" onkeyPress="return validerNombre();"><br><br>
+			<!-- Erreur de nombre
+			<label for="error_number" class="error error-zi hide" id="error_number">Chiffre Obligatoire</label> -->
+
+			<input type="button" value="Résoudre" id="validerCalcul" name="resoudre" onclick="reso(fn)"><br><br>
+
+			∆= <input type="text" name="D" id="D" size="6" onfocus="this.blur();"><br><br>
+
+			X<sub>1</sub>= <input type="text" name="x1" id="x1" size="6" onfocus="this.blur();"><br><br>
+			X<sub>2</sub>= <input type="text" name="x2" id="x2" size="6" onfocus="this.blur();"><br><br>
+			X<sub>3</sub>= <input type="text" name="x3" id="x3" size="6" onfocus="this.blur();"><br><br>
+			X<sub>4</sub>= <input type="text" name="x4" id="x4" size="6" onfocus="this.blur();"><br><br>
+
+			<input type="reset" value="Supprimer">
+		</form>
+		<script>
+			function showTime(){
+			    var date = new Date();
+    			var h = date.getHours();
+			    var m = date.getMinutes();
+			    var s = date.getSeconds();
+			    //var session = "AM";
+
+			    /*if (h == 12) {
+    			    h = 12;
+    			}*/
+    			if (h > 24) {
+        			h = h - 24;
+        			//session = "PM";
+    			}
+
+			    h = (h < 10) ? "0" + h : h;
+    			m = (m < 10) ? "0" + m : m;
+			    s = (s < 10) ? "0" + s : s;
+    			var time = h + ":" + m + ":" + s /*+ " " + session*/;
+    			document.getElementById("MyClockDisplay").innerText = time;
+    			document.getElementById("MyClockDisplay").textContent = time;
+    			setTimeout(showTime, 1000);
+			}
+			showTime();
+		</script>
+	</body>
+</html>

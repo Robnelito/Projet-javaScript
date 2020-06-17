@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Panneau publicitaire</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="png" href="../icone/logo.png">
+    <link rel="stylesheet" href="../css/pub.css">
+    <script type="text/javascript" src="../js/pub.js"></script>
+    <script type="text/javascript" src="../js/music.js"></script>
+    <style>
+      body{
+        background-image: url("../image/fond.jpg");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Summer Paradise</h1>
+    <div id="MyClockDisplay" class="clock"></div>
+    <ul>
+      <a href="../index.html"><button class="button"><span>Accueil</span></button></a><br><br>
+      <a href="../lien/degre.html"><button class="button"><span>2<sup>nd</sup>degré</span></button></a><br><br>
+      <a href="../lien/calcul.html"><button class="button"><span>Système</span></button></a><br><br>
+    </ul>
+    <div id="main">
+      <div id="image">
+        <img id="slideshow" src="../image/1.jpg"><br>
+      </div>
+      <audio id="audioPlayer">
+        <source src="../audio/plage.mp3">
+      </audio>
+      <div id="buttons">
+        <input id="play" class="bouton" type="image" src="../icone/play.png" alt="Play" onclick="mode('play');startSlideshow();play('audioPlayer', this);">
+        <input id="pause" class="bouton" type="image" src="../icone/pause.png" disabled="disabled" onclick="mode('pause');startSlideshow();play('audioPlayer', this);">
+        <input id="stop" type="image" src="../icone/stop.png" disabled="disabled" onclick="mode('stop');startSlideshow();resume('audioPlayer');">
+      </div>
+    </div>
+		<script>
+      function showTime(){
+        var date = new Date();
+        var h = date.getHours();
+        var m = date.getMinutes(); 
+        var s = date.getSeconds();
+        //var session = "AM";
+  
+        /*if (h == 12) {
+          h = 12;
+        }*/
+        if (h > 24) {
+          h = h - 24;
+          //session = "PM";
+        }
+  
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+        var time = h + ":" + m + ":" + s /*+ " " + session*/;
+        document.getElementById("MyClockDisplay").innerText = time;
+        document.getElementById("MyClockDisplay").textContent = time;
+        setTimeout(showTime, 1000);
+      }
+      showTime();
+      </script>
+  </body>
+</html>

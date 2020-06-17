@@ -1,0 +1,115 @@
+.chip {
+    display: inline-block;
+    margin-left: 5%;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    font-family: century gothic;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: rgba(240, 240, 240, 0.4);
+}
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.button {
+    border-radius: 4px;
+    background-color: rgba(240, 240, 240, 0.7);
+    border: none;
+    color: rgba(18, 129, 86, 1);
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.button:hover span {
+    padding-right: 25px;
+}
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+@font-face{
+    font-family: tete;
+    src: url("../font/Kuroneko.ttf");
+}
+h1{
+    text-align: center;
+    font-family: tete;
+    color: #fff;
+    margin-top: -1%;
+}
+.clock{
+    position: absolute;
+    top: 15%;
+    left: 11%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #ccc;
+    font-size: 80px;
+    font-family: digital;
+    /*border: 1px solid #ccc;*/
+    padding: 0px 5px 0px 5px;
+}
+@font-face{
+    font-family: digital;
+    src: url("../font/digital.ttf");
+}
+ul{
+    margin-top: 3%;
+}
+form{
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: -27%;
+    padding: 2%;
+    text-align: center;
+    font-size: 1.20em;
+    border-radius: 20px;
+}
+input[type=text]{
+    padding: 1%;
+    border-radius: 5px;
+}
+@font-face{
+	font-family: police;
+	src: url("../font/Ralliankara.ttf");
+}
+input[type=button], input[type=reset]{
+    border: none;
+    padding: 2%;
+    width: 50%;
+    border-radius: 15px;
+    font-size: 130%;
+    color: rgba(18, 129, 86, 1);
+    font-family: police;
+}
+input[type=button]:hover, input[type=reset]:hover{
+	border: none;
+	width: 50%;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	/*font-size: 150%;*/
+	color: rgb(32, 200, 200);
+}

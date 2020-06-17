@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS - Project</title>
+		<meta charset="utf-8">
+		<link rel="icon" type="png" href="icone/logo.png">
+		<style type="text/css">
+			body{
+				background-image: url("image/fond.jpg");
+				background-attachment: fixed;
+				background-size: 100%;
+				background-repeat: no-repeat;
+			}
+			@font-face{
+				font-family: digital;
+				src: url("font/digital.ttf");
+			}
+			h1{
+				margin-top: 3.5%;
+				margin-left: 36%;
+				color: #ccc;
+				font-size: 5em;
+				font-family: "Comic Sans MS";
+			}
+			.clock{
+				position: absolute;
+				top: 15%;
+				left: 10%;
+				transform: translateX(-50%) translateY(-50%);
+				color: #ccc;
+				font-size: 80px;
+				font-family: digital;
+				/*border: 1px solid #ccc;*/
+				padding: 0px 5px 0px 5px;
+			}
+			@font-face{
+				font-family: footer;
+				src: url("font/Sapous.ttf");
+			}
+			.chip {
+				display: inline-block;
+				margin-left: 5%;
+    			padding: 0 25px;
+    			height: 50px;
+				font-size: 16px;
+				font-family: century gothic;
+    			line-height: 50px;
+    			border-radius: 25px;
+    			background-color: rgba(240, 240, 240, 0.4);
+			}
+			.chip img {
+    			float: left;
+    			margin: 0 10px 0 -25px;
+    			height: 50px;
+    			width: 50px;
+    			border-radius: 50%;
+			}
+			.button {
+  				border-radius: 4px;
+  				background-color: rgba(240, 240, 240, 0.7);
+  				border: none;
+  				color: rgba(18, 129, 86, 1);
+  				text-align: center;
+  				font-size: 28px;
+  				padding: 20px;
+  				width: 200px;
+  				transition: all 0.5s;
+  				cursor: pointer;
+  				margin: 5px;
+			}
+
+			.button span {
+  				cursor: pointer;
+  				display: inline-block;
+  				position: relative;
+  				transition: 0.5s;
+			}
+
+			.button span:after {
+  				content: '»';
+  				position: absolute;
+  				opacity: 0;
+  				top: 0;
+  				right: -20px;
+  				transition: 0.5s;
+			}
+
+			.button:hover span {
+  				padding-right: 25px;
+			}
+
+			.button:hover span:after {
+  				opacity: 1;
+  				right: 0;
+			}
+			.about{
+				background-color: rgba(240, 240, 240, 0.7);
+				padding: 2%;
+				border-radius: 15px;
+				font-family: "century gothic";
+				width: 40%;
+				float: right;
+				margin-top: -3%;
+				margin-right: 24%;
+				text-align: justify;
+				font-size: 130%;
+			}
+			h3{
+				text-align: center;
+				color: white;
+				font-family: "century gothic";
+				font-size: 140%;
+			}
+			/*footer{
+				margin-top: 25%;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id="MyClockDisplay" class="clock"></div>
+		<h1>Présentation</h1>
+		<div class="about">
+			<p>_La premiere partie vous aide à résoudre une équation du second degré.</p>
+			<p>_La seconde partie vous aide à résoudre un systeme linéaire à 4 inconnus.</p>
+			<p>_La dernière partie quant à elle, montre des séquences d'images qui a pour but d'illustrer une publicité.</p>
+		</div>
+		<ul>
+			<a href="lien/degre.html"><button class="button"><span>2<sup>nd</sup>degré</span></button></a><br><br>
+			<a href="lien/calcul.html"><button class="button"><span>Système</span></button></a><br><br>
+			<a href="lien/pub.html"><button class="button"><span>Publicité</span></button></a><br><br>
+		</ul>
+		<script type="text/javascript">
+			function showTime(){
+				var date = new Date();
+				var h = date.getHours();
+				var m = date.getMinutes();
+				var s = date.getSeconds();
+				//var session = "AM";
+
+				/*if (h == 12) {
+					h = 12;
+				}*/
+				if (h > 24) {
+					h = h - 24;
+					//session = "PM";
+				}
+
+				h = (h < 10) ? "0" + h : h;
+				m = (m < 10) ? "0" + m : m;
+				s = (s < 10) ? "0" + s : s;
+				var time = h + ":" + m + ":" + s /*+ " " + session*/;
+				document.getElementById("MyClockDisplay").innerText = time;
+				document.getElementById("MyClockDisplay").textContent = time;
+				setTimeout(showTime, 1000);
+			}
+			showTime();
+		</script>
+		<footer>
+			<h3><u>Contributeurs:</u></h3>
+			<div class="chip">
+				<img src="image/hasina.jpg" alt="Person" width="600" height="600">
+				RAHARISON Hasina Tiana n°49
+			</div>
+			<div class="chip">
+				<img src="image/roby.jpg" alt="Person" width="600" height="600">
+				RAKOTONIAINA Christiano Robnelito n°61
+			</div>
+			<div class="chip">
+				<img src="image/toky.jpg" alt="Person" width="" height="">
+				RALINIRINA Harry Toky Patrick n°71
+			</div>
+		</footer>
+	</body>
+</html>
